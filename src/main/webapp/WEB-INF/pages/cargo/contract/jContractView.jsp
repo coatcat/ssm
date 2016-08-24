@@ -51,7 +51,7 @@
 
                     </tr>
                     <tr>
-                        <td class="columnTitle">签单日期：</td>
+                        <td class="columnTitle">签单 日期：</td>
                         <td class="tableContent">
                             <input type="text" style="width:90px;" name="deliveryPeriod" value="<fmt:formatDate value="${obj.deliveryPeriod}" pattern="yyyy-MM-dd" />"
                                    onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
