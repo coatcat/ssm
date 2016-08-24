@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.FactoryMapper">
+    <!-- resultMap映射 -->
+    <resultMap id="factoryRM" type="com.ssm.domain.Factory">
+        <!-- 主键 -->
+        <id property="id" column="id"/>
+        <!-- 一般属性 -->
+        <result property="f_name" column="f_name"/>
+        <result property="f_contacts" column="f_contacts"/>
+        <result property="f_phone" column="f_phone"/>
+        <result property="f_username" column="f_username"/>
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="find" parameterType="map" resultMap="factoryRM">
+        SELECT * FROM factory
+    </select>
+    <!-- 添加 -->
+    <insert id="insert" parameterType="com.ssm.domain.Factory">
+        insert into factory
+        (f_name,f_contacts,f_phone,f_username) values(#{f_name},#{f_contacts},#{f_phone},#{f_username})
+    </insert>
+
+    <!-- 修改 -->
+    <update id="update" parameterType="com.ssm.domain.Factory">
+    update factory
+        <set>
+          <if test="f_name!=null"> f_name=#{f_name}, </if>
+          <if test="f_contacts!=null"> f_contacts=#{f_contacts}, </if>
+          <if test="f_phone!=null"> f_phone=#{f_phone}, </if>
+          <if test="f_username!=null"> f_username=#{f_username}, </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <!-- 查询一个 -->
+    <select id="get" resultMap="factoryRM" parameterType="int">
+        select * from factory where id=#{id}
+    </select>
+
+    <!-- 删除一个 -->
+    <delete id="deleteById" parameterType="int"> delete from factory where id=#{id} </delete>
+
+    <!-- 删除多个 -->
+    <delete id="delete" parameterType="map">
+        delete from factory where id in
+    <foreach separator="," item="id" open="(" collection="ids" close=")"> #{id} </foreach>
+
+    </delete>
+</mapper>

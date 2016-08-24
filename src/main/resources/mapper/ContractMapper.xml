@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ContractMapper">
+    <!-- resultMap映射 -->
+    <resultMap id="contractRM" type="com.ssm.domain.Contract">
+        <!-- 主键 -->
+        <id property="id" column="id"/>
+        <!-- 一般属性 -->
+        <result property="contractNo" column="contractNo"/>
+        <result property="offeror" column="offeror"/>
+        <result property="printStyle" column="printStyle"/>
+        <result property="customName" column="customName"/>
+        <result property="signingDate" column="signingDate"/>
+        <result property="inputBy" column="inputBy"/>
+        <result property="checkBy" column="checkBy"/>
+        <result property="inspector" column="inspector"/>
+        <result property="shipTime" column="shipTime"/>
+        <result property="deliveryPeriod" column="deliveryPeriod"/>
+
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="find" parameterType="map" resultMap="contractRM">
+        SELECT * FROM contract
+    </select>
+    <!-- 添加 -->
+    <insert id="insert" parameterType="com.ssm.domain.Contract">
+        insert into contract
+        (contractNo,offeror,printStyle,customName,signingDate,inputBy,checkBy,inspector,deliveryPeriod)
+        values
+        (#{contractNo},#{offeror},#{printStyle},#{customName},#{signingDate},#{inputBy},#{checkBy},#{inspector},#{deliveryPeriod})
+
+    </insert>
+
+    <!-- 修改 -->
+    <update id="update" parameterType="com.ssm.domain.Contract">
+    update contract
+        <set>
+          <if test="contractNo!=null"> contractNo=#{contractNo}, </if>
+          <if test="offeror!=null"> offeror=#{offeror}, </if>
+          <if test="printStyle!=null"> printStyle=#{printStyle}, </if>
+          <if test="customName!=null"> customName=#{customName}, </if>
+          <if test="signingDate!=null"> signingDate=#{signingDate}, </if>
+          <if test="inputBy!=null"> inputBy=#{inputBy}, </if>
+          <if test="checkBy!=null"> checkBy=#{checkBy}, </if>
+          <if test="inspector!=null"> inspector=#{inspector}, </if>
+          <if test="deliveryPeriod!=null"> deliveryPeriod=#{deliveryPeriod}, </if>
+
+        </set>
+        where id=#{id}
+    </update>
+
+    <!-- 查询一个 -->
+    <select id="get" resultMap="contractRM" parameterType="int">
+        select * from contract where id=#{id}
+    </select>
+
+    <!-- 删除一个 -->
+    <delete id="deleteById" parameterType="int"> delete from contract where id=#{id} </delete>
+
+    <!-- 删除多个 -->
+    <delete id="delete" parameterType="map">
+        delete from contract where id in
+    <foreach separator="," item="id" open="(" collection="ids" close=")"> #{id} </foreach>
+
+    </delete>
+
+    <!-- 分页查询 -->
+    <select id="findPage" resultMap="contractRM" parameterType="com.ssm.pagination.Page">
+        select * from contract
+    </select>
+</mapper>
