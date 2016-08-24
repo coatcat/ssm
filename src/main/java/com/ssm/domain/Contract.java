@@ -4,7 +4,7 @@ import java.util.Date;
 
 //购销合同
 public class Contract {
-    private Integer id;  //id号
+    private Integer id;  //id号码
     private String contractNo;  //合同号
     private String offeror;  //收购方
     private String printStyle;  //打印版实
