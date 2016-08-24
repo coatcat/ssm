@@ -43,7 +43,7 @@
 
                     </tr>
                     <tr>
-                        <td class="columnTitle_mustbe">打印版实：</td>
+                        <td class="columnTitle_mustbe">打印版本：</td>
                         <td class="tableContent"><input type="text" name="printStyle" value="${obj.printStyle}"/></td>
 
                         <td class="columnTitle_mustbe">客户名称：</td>
