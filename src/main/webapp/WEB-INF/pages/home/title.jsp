@@ -195,11 +195,7 @@
                             onclick="top.location.href='fmain.action';linkHighlightMenu(this);">用户信息
                         </span><span id="tm_separator"></span><span id="topmenu"
                             onclick="top.leftFrame.location.href='cargoLeft.action';top.main.location.href='cargoMain.action';linkHighlightMenu(this);">货运管理
-                        </span><span id="tm_separator"></span><span id="topmenu"
-                            onclick="top.leftFrame.location.href='baseinfoLeft.action';top.main.location.href='baseinfoMain.action';linkHighlightMenu(this);">基础信息
-                        </span><span id="tm_separator"></span><span id="topmenu"
-                            onclick="top.leftFrame.location.href='/system_admin/left.jsp';top.main.location.href='/system_admin/main.jsp';;linkHighlightMenu(this);">系统管理
-                        </span></div>
+                        </div>
 					</div>
 					    <span id="rightKey" onmouseover="periodOffset(this, 'right')"><img src="${ctx}/skin/default/images/title/right_arrow.png"/></span>
 				    </div>

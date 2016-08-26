@@ -43,15 +43,15 @@
 
                     </tr>
                     <tr>
-                        <td class="columnTitle_mustbe">打印版本：</td>
-                        <td class="tableContent"><input type="text" name="printStyle" value="${obj.printStyle}"/></td>
+                        <td class="columnTitle_mustbe">基本说明：</td>
+                        <td class="tableContent"><input type="text" name="remark" value="${obj.remark}"/></td>
 
                         <td class="columnTitle_mustbe">客户名称：</td>
                         <td class="tableContent"><input type="text" name="customName" value="${obj.customName}"/></td>
 
                     </tr>
                     <tr>
-                        <td class="columnTitle">签单 日期：</td>
+                        <td class="columnTitle">签单日期：</td>
                         <td class="tableContent">
                             <input type="text" style="width:90px;" name="deliveryPeriod" value="<fmt:formatDate value="${obj.deliveryPeriod}" pattern="yyyy-MM-dd" />"
                                    onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>

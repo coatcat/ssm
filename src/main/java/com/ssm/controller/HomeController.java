@@ -4,11 +4,18 @@ package com.ssm.controller;
 import com.ssm.domain.User;
 import com.ssm.pagination.Page;
 import com.ssm.service.UserService;
+import org.apache.commons.io.FileUtils;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,8 +27,13 @@ public class HomeController {
     UserService userService;
     @RequestMapping(value={"/home.action"})
     public String login(){
-        return "/index.jsp";
+        return "/home/register.jsp";
     }
+
+//    @RequestMapping(value={"/home.action"})
+//    public String login(){
+//        return "/index.jsp";
+//    }
 
     @RequestMapping(value={"/fmain.action"})
     public String fmain(){
@@ -36,6 +48,26 @@ public class HomeController {
     @RequestMapping(value={"/title.action"})
     public String title(){
         return "/home/title.jsp";
+    }
+
+    @RequestMapping(value = {"/download.action"})
+    public ResponseEntity<byte[]> download() throws IOException {
+//                指定文件,必须是绝对路径
+        File file = new File("D:/idea_project/ssm/src/main/webapp/make/girl.jpg");
+//                下载浏览器响应的那个文件名
+        String dfileName = "girl.jpg";
+//                下面开始设置HttpHeaders,使得浏览器响应下载
+        HttpHeaders headers = new HttpHeaders();
+//                设置响应方式
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+//                设置响应文件
+        headers.setContentDispositionFormData("attachment", dfileName);
+//                把文件以二进制形式写回
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file), headers, HttpStatus.CREATED);
+    }
+    @RequestMapping("/home/olmsgList.action")
+    public String olmsgList(){
+        return "/home/olmsgList.jsp";
     }
 
     @RequestMapping(value={"/cargoLeft.action"})

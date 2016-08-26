@@ -24,7 +24,7 @@
         <div class="textbox-header">
             <div class="textbox-inner-header">
                 <div class="textbox-title">
-                    浏览生产厂家信息
+                    浏览用户信息
                 </div>
             </div>
         </div>
@@ -35,10 +35,10 @@
                 <table class="commonTable" cellspacing="1">
                     <tr>
                         <td class="columnTitle_mustbe">用户名：</td>
-                        <td class="tableContent">${obj.username}</td>
+                        <td class="tableContent"><input type="text" name="username" value="${obj.username}"/></td>
 
                         <td class="columnTitle_mustbe">密码：</td>
-                        <td class="tableContent">${obj.password}</td>
+                        <td class="tableContent"><input type="text" name="username" value="${obj.password}"/></td>
 
                     </tr>
                 </table>

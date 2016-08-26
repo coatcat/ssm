@@ -7,7 +7,7 @@ public class Contract {
     private Integer id;  //id号码
     private String contractNo;  //合同号
     private String offeror;  //收购方
-    private String printStyle;  //打印版实
+    private String remark;  //说明
     private String customName;  //客户名称
     private java.util.Date signingDate;  //签单日期
     private String inputBy;  //制单人
@@ -37,14 +37,6 @@ public class Contract {
 
     public void setOfferor(String offeror) {
         this.offeror = offeror;
-    }
-
-    public String getPrintStyle() {
-        return printStyle;
-    }
-
-    public void setPrintStyle(String printStyle) {
-        this.printStyle = printStyle;
     }
 
     public String getCustomName() {
@@ -95,4 +87,11 @@ public class Contract {
         this.deliveryPeriod = deliveryPeriod;
     }
 
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 }

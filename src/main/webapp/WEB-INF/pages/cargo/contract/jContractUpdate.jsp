@@ -44,8 +44,8 @@
 
                     </tr>
                     <tr>
-                        <td class="columnTitle_mustbe">打印版实：</td>
-                        <td class="tableContent"><input type="text" name="printStyle" value="${obj.printStyle}"/></td>
+                        <td class="columnTitle_mustbe">基本说明：</td>
+                        <td class="tableContent"><input type="text" name="remark" value="${obj.remark}"/></td>
 
                         <td class="columnTitle_mustbe">客户名称：</td>
                         <td class="tableContent"><input type="text" name="customName" value="${obj.customName}"/></td>

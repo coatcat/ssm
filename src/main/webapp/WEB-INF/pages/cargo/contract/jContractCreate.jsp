@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <title></title>
 </head>
 <body>
@@ -43,22 +44,25 @@
 
                     </tr>
                     <tr>
-                        <td class="columnTitle_mustbe">打印版实：</td>
-                        <td class="tableContent"><input type="text" name="printStyle"/></td>
-
                         <td class="columnTitle_mustbe">客户名称：</td>
                         <td class="tableContent"><input type="text" name="customName"/></td>
 
+                        <td class="columnTitle">交货日期：</td>
+                        <td class="tableContent">
+                            <input type="text" style="width:90px;" name="deliveryPeriod"
+                                   onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
+                        </td>
+
                     </tr>
                     <tr>
+                        <td class="columnTitle_mustbe">制单人：</td>
+                        <td class="tableContent"><input type="text" name="inputBy"/></td>
+
                         <td class="columnTitle">签单日期：</td>
                         <td class="tableContent">
                             <input type="text" style="width:90px;" name="signingDate"
                                    onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
                         </td>
-
-                        <td class="columnTitle_mustbe">制单人：</td>
-                        <td class="tableContent"><input type="text" name="inputBy"/></td>
 
                     </tr>
                     <tr>
@@ -71,16 +75,14 @@
                     </tr>
 
                     <tr>
-                        <td class="columnTitle">交货日期：</td>
-                        <td class="tableContent">
-                            <input type="text" style="width:90px;" name="deliveryPeriod"
-                                   onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
-                        </td>
+                        <textarea id="TextArea1" name="remark" cols="20" rows="2" class="ckeditor">基本说明</textarea>
 
+                        <script type="text/javascript">CKEDITOR.replace('TextArea1');</script>
                     </tr>
                 </table>
             </div>
         </div>
+
 
 
 </form>

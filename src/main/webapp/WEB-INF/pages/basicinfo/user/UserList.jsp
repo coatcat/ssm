@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ include file="../../baselist.jsp"%>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
@@ -28,7 +29,6 @@
                         <td class="tableHeader">ID</td>
                         <td class="tableHeader">用户名</td>
                         <td class="tableHeader">密码</td>
-                        <td class="tableHeader">添加</td>
                         <td class="tableHeader">更新</td>
                         <td class="tableHeader">删除</td>
                         <td class="tableHeader">查看</td>
@@ -42,7 +42,6 @@
                             <td>${o.id}</td>
                             <td>${o.username}</td>
                             <td>${o.password}</td>
-                            <td><a href="tocreate.action">添加</a></td>
                             <td><a href="toupdate.action?id=${o.id}">更新</a></td>
                             <td><a href="deleteById.action?id=${o.id}">删除</a></td>
                             <td><a href="toview.action?id=${o.id}">查看</a></td>
@@ -55,8 +54,8 @@
 
         </div>
 
-
 </form>
+
 ${pageLinks}
 </body>
 </html>

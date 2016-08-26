@@ -5,6 +5,8 @@
 </head>
 <body>
 <h1>test页面</h1>
-
+<%
+request.getParameter("content");
+    %>
 </body>
 </html>

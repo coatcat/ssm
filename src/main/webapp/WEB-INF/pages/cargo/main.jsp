@@ -18,19 +18,19 @@
         	</tr>
 
         	<tr>
-        		<td colspan="2" class="subModelTitle">基础代码管理</td>
+        		<td colspan="2" class="subModelTitle">用户信息</td>
         	</tr>        	
 			<tr>
-				<td class="model_intro_left" width="169">系统代码：</td>
-				<td class="model_intro_right" width="81%">统一管理系统中的基础代码, 相比“基础代码”它结果将形成多级树型结构。</td>
+				<td class="model_intro_left" width="169">用户信息管理：</td>
+				<td class="model_intro_right" width="81%">统一管理数据库中的用户信息。</td>
 			</tr>   	
 
 			<tr>
-        		<td colspan="2" class="subModelTitle">基础信息管理</td>
+        		<td colspan="2" class="subModelTitle">货运管理</td>
         	</tr>  
 			<tr>
 				<td class="model_intro_left">厂家信息：</td>
-				<td class="model_intro_right">在购销合同中货物和附件中可选择对应的厂家。</td>
+				<td class="model_intro_right">在购销合同中货物中可选择对应的厂家。</td>
 			</tr>   	
 			
 			<tfoot>

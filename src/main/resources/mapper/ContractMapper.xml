@@ -10,13 +10,12 @@
         <!-- 一般属性 -->
         <result property="contractNo" column="contractNo"/>
         <result property="offeror" column="offeror"/>
-        <result property="printStyle" column="printStyle"/>
+        <result property="remark" column="remark"/>
         <result property="customName" column="customName"/>
         <result property="signingDate" column="signingDate"/>
         <result property="inputBy" column="inputBy"/>
         <result property="checkBy" column="checkBy"/>
         <result property="inspector" column="inspector"/>
-        <result property="shipTime" column="shipTime"/>
         <result property="deliveryPeriod" column="deliveryPeriod"/>
 
     </resultMap>
@@ -28,9 +27,9 @@
     <!-- 添加 -->
     <insert id="insert" parameterType="com.ssm.domain.Contract">
         insert into contract
-        (contractNo,offeror,printStyle,customName,signingDate,inputBy,checkBy,inspector,deliveryPeriod)
+        (contractNo,offeror,remark,customName,signingDate,inputBy,checkBy,inspector,deliveryPeriod)
         values
-        (#{contractNo},#{offeror},#{printStyle},#{customName},#{signingDate},#{inputBy},#{checkBy},#{inspector},#{deliveryPeriod})
+        (#{contractNo},#{offeror},#{remark},#{customName},#{signingDate},#{inputBy},#{checkBy},#{inspector},#{deliveryPeriod})
 
     </insert>
 
@@ -40,7 +39,7 @@
         <set>
           <if test="contractNo!=null"> contractNo=#{contractNo}, </if>
           <if test="offeror!=null"> offeror=#{offeror}, </if>
-          <if test="printStyle!=null"> printStyle=#{printStyle}, </if>
+          <if test="remark!=null"> remark=#{remark}, </if>
           <if test="customName!=null"> customName=#{customName}, </if>
           <if test="signingDate!=null"> signingDate=#{signingDate}, </if>
           <if test="inputBy!=null"> inputBy=#{inputBy}, </if>

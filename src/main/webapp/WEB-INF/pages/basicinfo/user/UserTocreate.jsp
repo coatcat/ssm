@@ -2,6 +2,7 @@
 <%@ include file="../../base.jsp"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <title></title>
 </head>
 <body>
@@ -12,7 +13,7 @@
                 <div id="navMenubar">
                     <ul>
                         <li id="save"><a href="#" onclick="formSubmit('insert.action','_self');">确定</a></li>
-                        <li id="back"><a href="UserList.action">返回</a></li>
+                        <li id="back"><a href="List.action">返回</a></li>
                     </ul>
                 </div>
             </div>

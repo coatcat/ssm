@@ -8,7 +8,7 @@
         <!-- 主键 -->
         <id property="id" column="id"/>
         <!-- 一般属性 -->
-        <result property="f_name" column="f_name"/>
+        <result property="factoryName" column="factoryName"/>
         <result property="f_contacts" column="f_contacts"/>
         <result property="f_phone" column="f_phone"/>
         <result property="f_username" column="f_username"/>
@@ -21,14 +21,14 @@
     <!-- 添加 -->
     <insert id="insert" parameterType="com.ssm.domain.Factory">
         insert into factory
-        (f_name,f_contacts,f_phone,f_username) values(#{f_name},#{f_contacts},#{f_phone},#{f_username})
+        (factoryName,f_contacts,f_phone,f_username) values(#{factoryName},#{f_contacts},#{f_phone},#{f_username})
     </insert>
 
     <!-- 修改 -->
     <update id="update" parameterType="com.ssm.domain.Factory">
     update factory
         <set>
-          <if test="f_name!=null"> f_name=#{f_name}, </if>
+          <if test="factoryName!=null"> factoryName=#{factoryName}, </if>
           <if test="f_contacts!=null"> f_contacts=#{f_contacts}, </if>
           <if test="f_phone!=null"> f_phone=#{f_phone}, </if>
           <if test="f_username!=null"> f_username=#{f_username}, </if>

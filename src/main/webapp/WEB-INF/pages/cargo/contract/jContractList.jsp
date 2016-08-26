@@ -29,15 +29,15 @@
                         <td class="tableHeader">ID</td>
                         <td class="tableHeader">合同号</td>
                         <td class="tableHeader">收购方</td>
-                        <td class="tableHeader">打印版实</td>
+                        <td class="tableHeader">基本说明</td>
                         <td class="tableHeader">客户名称</td>
                         <td class="tableHeader">签单日期</td>
                         <td class="tableHeader">制单人</td>
                         <td class="tableHeader">审单人</td>
                         <td class="tableHeader">验货员</td>
                         <td class="tableHeader">交货日期</td>
+                        <td class="tableHeader">操作</td>
 
-                        <td class="tableHeader">添加</td>
                         <td class="tableHeader">更新</td>
                         <td class="tableHeader">删除</td>
                         <td class="tableHeader">查看</td>
@@ -50,14 +50,14 @@
                             <td>${o.id}</td>
                             <td>${o.contractNo}</td>
                             <td>${o.offeror}</td>
-                            <td>${o.printStyle}</td>
+                            <td>${o.remark}</td>
                             <td>${o.customName}</td>
                             <td><fmt:formatDate value="${o.signingDate}" pattern="yyyy-MM-dd" /></td>
                             <td>${o.inputBy}</td>
                             <td>${o.checkBy}</td>
                             <td>${o.inspector}</td>
                             <td><fmt:formatDate value="${o.deliveryPeriod}" pattern="yyyy-MM-dd" /></td>
-                            <td><a href="tocreate.action">添加</a></td>
+                            <td><a href="${ctx}/cargo/contractproduct/tocreate.action?contractId=${o.id}">[货物]</a></td>
                             <td><a href="toupdate.action?id=${o.id}">更新</a></td>
                             <td><a href="deleteById.action?id=${o.id}">删除</a></td>
                             <td><a href="toview.action?id=${o.id}">查看</a></td>

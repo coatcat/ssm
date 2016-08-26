@@ -25,7 +25,7 @@
         <div class="textbox-header">
             <div class="textbox-inner-header">
                 <div class="textbox-title">
-                    修改生产厂家信息
+                    修改用户信息
                 </div>
             </div>
         </div>

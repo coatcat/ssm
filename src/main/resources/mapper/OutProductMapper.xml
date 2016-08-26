@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.OutProductMapper">
+    <!-- resultMap映射 -->
+    <resultMap id="outProductRM" type="com.ssm.domain.OutProduct">
+        <result property="customName" column="customName"/>
+        <result property="contractNo" column="contractNo"/>
+        <result property="signingDate" column="signingDate"/>
+        <result property="deliveryPeriod" column="deliveryPeriod"/>
+        <result property="productNo" column="productNo"/>
+        <result property="cnumber" column="cnumber"/>
+        <result property="factoryName" column="factoryName"/>
+
+    </resultMap>
+
+    <select id="find" parameterType="String" resultMap="outProductRM">
+        select
+	c.customName,c.contractNo,cp.productNo,cp.cnumber,cp.factoryName,c.signingDate,c.deliveryPeriod
+    from
+      (select id,customName,contractNo,signingDate,deliveryPeriod from contract)c
+    left join
+      (select contractId,productNo,cnumber,factoryName from contracproduct)cp
+    on c.id=cp.contractId
+
+    </select>
+</mapper>

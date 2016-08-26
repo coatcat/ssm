@@ -15,8 +15,7 @@
 <div id="innerMenubar">
     <div id="navMenubar">
 <ul>
-<li id="save"><a href="#" onclick="formSubmit('${ctx}/cargo/outproduct/print.action','_self');this.blur();">打印</a></li>
-<li id="back"><a href="#" onclick="formSubmit('${ctx}/cargo/contract/list.action','_self');this.blur();">返回</a></li>
+<li id="save"><a href="#" onclick="formSubmit('${ctx}/cargo/contract/print.action','_self');this.blur();">打印</a></li>
 </ul>
     </div>
 </div>
@@ -35,9 +34,9 @@
     <div>
 		<table class="commonTable" cellspacing="1">
 	        <tr>
-	            <td class="columnTitle">签单日期：</td>
+	            <td class="columnTitle">请选择需要打印的月表日期：</td>
 	            <td class="tableContent">
-	            	<input type="text" style="width:90px;" name="inputDate" value="2011-12"
+	            	<input type="text" style="width:90px;" name="inputDate" value="2016-08"
 	            		 onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM'});"/>
 	           	</td>
 	        </tr>

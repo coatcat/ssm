@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ContractProductMapper">
+    <!-- resultMap映射 -->
+    <resultMap id="contractProductRM" type="com.ssm.domain.ContractProduct">
+        <!-- 主键 -->
+        <id property="id" column="id"/>
+        <!-- 一般属性 -->
+        <result property="contractId" column="contractId"/>
+        <result property="factoryId" column="factoryId"/>
+        <result property="factoryName" column="factoryName"/>
+        <result property="productNo" column="productNo"/>
+        <result property="productDesc" column="productDesc"/>
+        <result property="cnumber" column="cnumber"/>
+        <result property="packingUnit" column="packingUnit"/>
+        <result property="price" column="price"/>
+        <result property="amount" column="amount"/>
+
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="find" parameterType="map" resultMap="contractProductRM">
+        SELECT * FROM contracproduct where 1=1
+        <if test="contractId!=null">and contractId=#{contractId}</if>
+    </select>
+    <!-- 添加 -->
+    <insert id="insert" parameterType="com.ssm.domain.ContractProduct">
+        insert into contracproduct
+        (contractId,factoryId,factoryName,productNo,productDesc,cnumber,packingUnit,price,amount)
+        values
+        (#{contractId},#{factoryId},#{factoryName},#{productNo},#{productDesc},#{cnumber},#{packingUnit},#{price},#{amount})
+
+    </insert>
+
+    <!-- 修改 -->
+    <update id="update" parameterType="com.ssm.domain.ContractProduct">
+    update contracproduct
+        <set>
+          <if test="contractId!=null"> contractId=#{contractId}, </if>
+          <if test="factoryId!=null"> factoryId=#{factoryId}, </if>
+          <if test="factoryName!=null"> factoryName=#{factoryName}, </if>
+          <if test="productNo!=null"> productNo=#{productNo}, </if>
+          <if test="productDesc!=null"> productDesc=#{productDesc}, </if>
+          <if test="cnumber!=null"> cnumber=#{cnumber}, </if>
+          <if test="packingUnit!=null"> packingUnit=#{packingUnit}, </if>
+          <if test="price!=null"> price=#{price}, </if>
+          <if test="amount!=null"> amount=#{amount}, </if>
+
+        </set>
+        where id=#{id}
+    </update>
+
+    <!-- 查询一个 -->
+    <select id="get" resultMap="contractProductRM" parameterType="int">
+        select * from contracproduct where id=#{id}
+    </select>
+
+    <!-- 删除一个 -->
+    <delete id="deleteById" parameterType="int"> delete from contracproduct where id=#{id} </delete>
+
+    <!-- 删除多个 -->
+    <delete id="delete" parameterType="map">
+        delete from contracproduct where id in
+    <foreach separator="," item="id" open="(" collection="ids" close=")"> #{id} </foreach>
+
+    </delete>
+
+    <!-- 分页查询 -->
+    <select id="findPage" resultMap="contractProductRM" parameterType="com.ssm.pagination.Page">
+        select * from contracproduct
+    </select>
+</mapper>
