@@ -1,10 +1,10 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="../../base.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-    <title></title>
+    <title>添加购销合同</title>
 </head>
 <body>
 <form method="post">
@@ -73,19 +73,15 @@
                         <td class="tableContent"><input type="text" name="inspector"/></td>
 
                     </tr>
-
-                    <tr>
-                        <textarea id="TextArea1" name="remark" cols="20" rows="2" class="ckeditor">基本说明</textarea>
-
-                        <script type="text/javascript">CKEDITOR.replace('TextArea1');</script>
-                    </tr>
                 </table>
             </div>
         </div>
+    </div>
 
 
-
+    <textarea id="remark" name="remark" class="ckeditor">基本说明</textarea>
 </form>
+<script type="text/javascript">CKEDITOR.replace('remark');</script>
 </body>
 </html>
 

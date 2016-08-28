@@ -10,6 +10,7 @@
         <!-- 一般属性 -->
         <result property="username" column="username"/>
         <result property="password" column="password"/>
+        <result property="file" column="file"/>
     </resultMap>
 
     <!-- 查询 -->
@@ -19,7 +20,7 @@
     <!-- 添加 -->
     <insert id="insert" parameterType="com.ssm.domain.User">
         insert into user
-        (username,password) values(#{username},#{password})
+        (username,password,file) values(#{username},#{password},#{file})
     </insert>
 
     <!-- 修改 -->
@@ -28,6 +29,7 @@
         <set>
           <if test="username!=null"> username=#{username}, </if>
           <if test="password!=null"> password=#{password}, </if>
+          <if test="file!=null"> file=#{flie}, </if>
         </set>
         where id=#{id}
     </update>
@@ -50,5 +52,10 @@
     <!-- 分页查询 -->
     <select id="findPage" resultMap="userRM" parameterType="com.ssm.pagination.Page">
         select * from user
+    </select>
+
+    <!-- 查询username -->
+    <select id="getUserName" parameterType="string" resultMap="userRM">
+        select username from user WHERE username=${username}
     </select>
 </mapper>

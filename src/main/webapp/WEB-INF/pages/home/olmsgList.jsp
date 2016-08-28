@@ -172,11 +172,6 @@ window.onerror = killErrors;
 </div>
 </div>
 </div>
- 
-<logic:notEmpty name="olmsgList">
- 
-	
-		
 		<div id='ff8080813d00613e013d0067909e0009' style='position:absolute;left:122px;top:97px;z-index:1001; height:164px;background:none;' onmousedown='getFocus(this)'>
 			<table border=0 cellspacing="0" cellpadding="0" width="220">
 				<tr>
@@ -189,44 +184,11 @@ window.onerror = killErrors;
 						
 					</td>
 				</tr>
-				<tr>
-					<td style='cursor:move;white-space:nowrap;' width='100%' onmousedown="MDown('ff8080813d00613e013d0067909e0009')" background="${ctx}/images/olmsg/C0FFE52.gif" >
-						<div style="float:left;width:130px;padding-left:7px;font-family:Tahoma;color:gray;font-style : oblique;">
-							2013-02-22 13:37
-						</div>
-						<div style="float:right;width:80px;text-align:right;padding-right:7px;">
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-																					
-							
-							<a style='cursor:pointer;' title="编辑" onclick="msgupdate('ff8080813d00613e013d0067909e0009','edit')"><img src="${ctx}/images/olmsg/doc_edit.gif"/></a>
-							
-							
-							
-							
-							
-							
-							
-							<a style='cursor:pointer;' title="删除" onclick="msgdel('ff8080813d00613e013d0067909e0009')"><img src="${ctx}/images/olmsg/doc_del.gif"/></a>
-							
-							
-							
-						</div>
-					</td>
-				</tr>
+
 				<tr>
 					<td background="${ctx}/images/olmsg/C0FFE52.gif">
 					<div class="msgcontent">
-					欢迎使用杰管理平台
+					欢迎使用信息管理平台
 					</div>
 					
 					
@@ -240,19 +202,6 @@ window.onerror = killErrors;
 								<img border="0" src="${ctx}/images/olmsg/2.gif">
 								</td>
 								<td style="text-align:right;padding-right:8px;" nowrap>
-								[备忘]
-								
-								
-								
-								 <!-- [回复] -->
-								
-								
-										<!-- [回执] -->
-								
-								
-													<!-- [撤销原因] -->
-								
-								<!-- state==99[完成] -->
 								</td>
 							</tr>
 						</table>
@@ -274,45 +223,12 @@ window.onerror = killErrors;
 						
 					</td>
 				</tr>
-				<tr>
-					<td style='cursor:move;white-space:nowrap;' width='100%' onmousedown="MDown('ff8080813d00613e013d00681494000a')" background="${ctx}/images/olmsg/FFE7E82.gif" >
-						<div style="float:left;width:130px;padding-left:7px;font-family:Tahoma;color:gray;font-style : oblique;">
-							2013-02-22 13:37
-						</div>
-						<div style="float:right;width:80px;text-align:right;padding-right:7px;">
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-																					
-							
-							<a style='cursor:pointer;' title="编辑" onclick="msgupdate('ff8080813d00613e013d00681494000a','edit')"><img src="${ctx}/images/olmsg/doc_edit.gif"/></a>
-							
-							
-							
-							
-							
-							
-							
-							<a style='cursor:pointer;' title="删除" onclick="msgdel('ff8080813d00613e013d00681494000a')"><img src="${ctx}/images/olmsg/doc_del.gif"/></a>
-							
-							
-							
-						</div>
-					</td>
-				</tr>
+
 				<tr>
 					<td background="${ctx}/images/olmsg/FFE7E82.gif">
 					<div class="msgcontent">
 					本系统实现货运企业日常管理<br />
-包括合同、报运、装箱、委托、发票等业务
+包括购销合同、用户管理、厂家信息、委托、打印月报等
 					</div>
 					
 					
@@ -326,19 +242,6 @@ window.onerror = killErrors;
 								<img border="0" src="${ctx}/images/olmsg/0.gif">
 								</td>
 								<td style="text-align:right;padding-right:8px;" nowrap>
-								[备忘]
-								
-								
-								
-								 <!-- [回复] -->
-								
-								
-										<!-- [回执] -->
-								
-								
-													<!-- [撤销原因] -->
-								
-								<!-- state==99[完成] -->
 								</td>
 							</tr>
 						</table>
@@ -346,8 +249,6 @@ window.onerror = killErrors;
 				</tr>
 			</table>
 		</div>
-	
-</logic:notEmpty>
  
  
 </form>

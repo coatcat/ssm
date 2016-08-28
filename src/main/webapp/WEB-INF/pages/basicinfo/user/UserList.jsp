@@ -28,6 +28,7 @@
                         <td class="tableHeader"></td>
                         <td class="tableHeader">ID</td>
                         <td class="tableHeader">用户名</td>
+                        <td class="tableHeader">下载头像</td>
                         <td class="tableHeader">密码</td>
                         <td class="tableHeader">更新</td>
                         <td class="tableHeader">删除</td>
@@ -40,7 +41,8 @@
                         <tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" >
                             <td></td>
                             <td>${o.id}</td>
-                            <td>${o.username}</td>
+                            <td><img src="img/${o.file}" width="25" height="25">${o.username}</td>
+                            <td><a href="img/${o.file}" download="${o.file}">下载头像</a></td>
                             <td>${o.password}</td>
                             <td><a href="toupdate.action?id=${o.id}">更新</a></td>
                             <td><a href="deleteById.action?id=${o.id}">删除</a></td>
